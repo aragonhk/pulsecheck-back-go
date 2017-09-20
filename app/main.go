@@ -99,6 +99,7 @@ func SearchPerson (q interface{}, skip int, limit int) (searchResults []OigModel
   }
   return
 }
+
 func GetPersonByName (lastName string, firstName string, skip int, limit int) (searchResults []OigModel, searchErr string) {
   searchResults, searchErr = SearchPerson(bson.M{
     "LASTNAME": bson.RegEx{"^"+lastName, "i"},
