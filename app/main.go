@@ -48,7 +48,7 @@ var (
 
 func main() {
   router := initializeRoutes()
-  router.Run(":3000")
+  router.Run()
 }
 
 func getSession() *mgo.Session {
@@ -58,6 +58,7 @@ func getSession() *mgo.Session {
     mgoSession, err = mgo.Dial(MongoServerAddr)
     mgo.SetDebug(DebugMode)
     mgo.SetLogger(logger)
+    gin.SetMode(gin.ReleaseMode)
     if err != nil {
         panic(err)
     }
@@ -65,7 +66,7 @@ func getSession() *mgo.Session {
   //defer mgoSession.Close()
 
   // Optional. Switch the session to a monotonic behavior.
-  mgoSession.SetMode(mgo.Monotonic, MonotonicBehavior)
+ // mgoSession.SetMode(gin.ReleaseMode, true) //mgo.Monotonic, MonotonicBehavior)
   fmt.Print(&buf)
   return mgoSession.Clone()
 }
