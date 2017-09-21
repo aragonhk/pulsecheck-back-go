@@ -2,7 +2,7 @@ package main
 
 import (
   "github.com/gin-gonic/gin"
-  "app/controllers"
+  "github.com/aragonhk/pulsecheck-back-go/app/controllers"
   )
 //var router *gin.Engine
 

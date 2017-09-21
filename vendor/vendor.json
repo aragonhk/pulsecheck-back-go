@@ -3,7 +3,9 @@
 	"heroku": {
 		"goVersion": "go1.9",
 		"install": [
-			"./..."
+			"./...",
+			"github.com/aragonhk/pulsecheck-back-go/app/controllers",
+			"github.com/aragonhk/pulsecheck-back-go/app/models"
 		]
 	},
 	"ignore": "test",
