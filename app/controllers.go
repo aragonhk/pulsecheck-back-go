@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"net/http"
   "github.com/gin-gonic/gin"
-  //"github.com/gin-contrib/cors"
+  "github.com/gin-contrib/cors"
 )
 
 func initRoutes() *gin.Engine {
   r := gin.Default()
- // r.Use(cors.Default())
+  r.Use(cors.Default())
 
   r.GET("/", index)
 
