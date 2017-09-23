@@ -6,7 +6,7 @@ import (
 var r *gin.Engine
 
 const (
-  testMode = true
+  testMode = false
 )
 
 func main() {
