@@ -9,7 +9,7 @@ import (
 
 func initRoutes() *gin.Engine {
   r := gin.Default()
-  r.Use(cors.Default())
+ // r.Use(cors.Default())
 
   r.GET("/", index)
 
