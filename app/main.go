@@ -13,9 +13,12 @@ func main() {
   
   r := initRoutes()
   
-  if gin.SetMode(gin.ReleaseMode) ; testMode {
+  if testMode {
     gin.SetMode(gin.TestMode)
     r.Run(":3000")
+  } else {
+    gin.SetMode(gin.ReleaseMode)
+    r.Run()
   }
 }
 
