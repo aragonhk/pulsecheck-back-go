@@ -2,34 +2,21 @@ package main
 
 import (
   "github.com/gin-gonic/gin"
-  "github.com/aragonhk/pulsecheck-back-go/controllers"
   )
-//var router *gin.Engine
+var r *gin.Engine
 
 const (
-  testMode = false
+  testMode = true
 )
 
 func main() {
-
-  router := initializeRoutes()
+  
+  r := initRoutes()
   
   if gin.SetMode(gin.ReleaseMode) ; testMode {
     gin.SetMode(gin.TestMode)
-    router.Run(":3000")
+    r.Run(":3000")
   }
 }
 
-func initializeRoutes() *gin.Engine {
-  r := gin.Default()
 
-  r.GET("/", controllers.Index)
-
-  r.GET("/login", controllers.Login)
-  
-  r.GET("/search", controllers.Search)
-  
-	r.Static("/public", "./public")
-
-	return r
-}
